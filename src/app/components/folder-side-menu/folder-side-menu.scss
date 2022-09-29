@@ -1,0 +1,40 @@
+$level-gep: 30px;
+
+.side-menu {
+  width: 400px;
+  height: 40%;
+  font-size: 13px;
+
+  &__header {
+    border-bottom: 2px solid grey;
+    display: flex;
+    padding: 0 1rem;
+
+    span:last-child {
+      margin-left: auto;
+      margin-right: 2rem;
+    }
+  }
+
+  &__body {
+    .divider {
+      border-bottom: 1px solid #b8b3b3;
+    }
+
+    .side-menu__folder {
+      text-indent: $level-gep;
+
+      li {
+        padding: 5px 0;
+      }
+    }
+
+    .side-menu__sub-folder {
+      padding: 5px 0;
+      li:first-child {
+        text-indent: $level-gep * 2;
+      }
+      text-indent: $level-gep * 3;
+    }
+  }
+}

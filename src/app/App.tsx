@@ -1,23 +1,29 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import "./App.scss";
 import { fetchFolders } from './api/folder';
+import FolderSideMenu from "./components/folder-side-menu/folder-side-menu";
+import Dashboard from "./components/dashboard/dashboard";
+import { Folder } from './model/folder';
 
 function App() {
 
-  const [folders, setFolders] = useState([]);
+  const [folders, setFolders] = useState<Folder[] | []>([]);
   
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchFolders().then(res =>
         res
       );
-      setFolders(data as [])
+      setFolders(data)
     };
     fetchData();
   }, []);
   
   return (
-    <div></div>
+    <div className="main-container">
+      <FolderSideMenu folders={folders} ></FolderSideMenu>
+      <Dashboard></Dashboard>
+    </div>
   );
 }
 
