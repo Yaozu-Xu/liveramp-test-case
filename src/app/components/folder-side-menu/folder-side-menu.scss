@@ -24,14 +24,18 @@ $level-gep: 30px;
     .side-menu__folder {
       text-indent: $level-gep;
 
-      li {
+      div:first-child.divider {
         padding: 5px 0;
+
+        * {
+            padding-left: 5px;
+        }
       }
     }
 
     .side-menu__sub-folder {
       padding: 5px 0;
-      li:first-child {
+      div:first-child {
         text-indent: $level-gep * 2;
       }
       text-indent: $level-gep * 3;

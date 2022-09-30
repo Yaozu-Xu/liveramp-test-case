@@ -28,6 +28,34 @@ export const folderMocksData: Folder[] = [
                 ]
             }
         ]
+    },
+    {
+        name: 'My Fruits',
+        id: 'a',
+        subFolder: [
+            {
+                name: 'Category',
+                sid: 'b',
+                children: [
+                    {
+                        displayName: 'Apple',
+                        cid: 'apple'
+                    },
+                    {
+                        displayName: 'Orange',
+                        cid: 'orange'
+                    },
+                    {
+                        displayName: 'Mango',
+                        cid: 'mango'
+                    },
+                    {
+                        displayName: 'Banana',
+                        cid: 'banana'
+                    }
+                ]
+            }
+        ]
     }
 ]
 
