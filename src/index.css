@@ -11,3 +11,7 @@ ul {
   list-style: none;
   padding-inline-start: 0;
 }
+
+.pointer {
+  cursor: pointer;
+}

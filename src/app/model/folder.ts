@@ -8,11 +8,11 @@ export type Folder = {
 export type SubFolder = {
     name: string;
     sid: string;
-    children: Conditions[];
+    children: SubFolderChild[];
     collapse?: boolean;
 }
 
-export type Conditions = {
+export type SubFolderChild = {
     displayName: string;
     cid: string;
 }

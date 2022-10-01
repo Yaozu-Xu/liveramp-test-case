@@ -8,7 +8,7 @@ $level-gep: 30px;
   &__header {
     border-bottom: 2px solid grey;
     display: flex;
-    padding: 0 1rem;
+    padding: .3rem 1rem;
 
     span:last-child {
       margin-left: auto;
@@ -35,10 +35,16 @@ $level-gep: 30px;
 
     .side-menu__sub-folder {
       padding: 5px 0;
+      text-indent: $level-gep * 3;
+
       div:first-child {
         text-indent: $level-gep * 2;
       }
-      text-indent: $level-gep * 3;
+
+      * {
+          padding-left: 10px;
+      }
+      
     }
   }
 }

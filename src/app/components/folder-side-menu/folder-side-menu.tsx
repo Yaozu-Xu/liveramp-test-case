@@ -2,7 +2,8 @@ import React from 'react'
 import './folder-side-menu.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFolder, faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import { Folder } from '../../model/folder'
+import { Folder, SubFolderChild } from '../../model/folder'
+import DraggableItem from '../draggable-item/draggbale-item'
 
 type FolderSideMenuProps = {
   folders: Folder[]
@@ -56,11 +57,7 @@ const FolderSideMenu = ({ folders, setFolders }: FolderSideMenuProps) => {
                     <span>{subFolder.name}</span>
                   </div>
                   {subFolder.collapse! ? (
-                    subFolder.children.map((_) => (
-                      <div className="side-menu__sub-folder divider" key={_.cid}>
-                        {_.displayName}
-                      </div>
-                    ))
+                    subFolder.children.map((_) => <DraggableItem key={_.cid} data={_}></DraggableItem>)
                   ) : (
                     <></>
                   )}
