@@ -11,7 +11,7 @@ type DraggableItemProps = {
 const DraggableItem = ({ data }: DraggableItemProps) => {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'sub-folder-child',
-    item: {data},
+    item: data,
     collect: (monitor: any) => ({
       isDragging: !!monitor.isDragging(),
     }),
@@ -26,7 +26,7 @@ const DraggableItem = ({ data }: DraggableItemProps) => {
         cursor: 'move',
       }}
     >
-      <FontAwesomeIcon icon={faGripVertical} className="pointer" />
+      <FontAwesomeIcon icon={faGripVertical} />
       <FontAwesomeIcon icon={faPeopleGroup} />
       <span>{data.displayName}</span>
     </div>

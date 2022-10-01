@@ -1,0 +1,16 @@
+.group-item {
+  margin: 10px;
+  border: 1px solid lightgray;
+
+  &__header {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+
+    span {
+      margin-left: 20px;
+      margin-right: auto;
+    }
+  }
+}

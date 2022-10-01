@@ -13,9 +13,9 @@ type FolderSideMenuProps = {
 const FolderSideMenu = ({ folders, setFolders }: FolderSideMenuProps) => {
   const generateChevron = (flag: boolean, onClick: any) =>
     flag ? (
-      <FontAwesomeIcon icon={faChevronDown} onClick={onClick} />
+      <FontAwesomeIcon icon={faChevronDown} onClick={onClick} className="pointer" />
     ) : (
-      <FontAwesomeIcon icon={faChevronRight} onClick={onClick} />
+      <FontAwesomeIcon icon={faChevronRight} onClick={onClick} className="pointer" />
     )
 
   const toggleFolder = (index: number) => {
@@ -37,8 +37,8 @@ const FolderSideMenu = ({ folders, setFolders }: FolderSideMenuProps) => {
   return (
     <div className="side-menu">
       <header className="side-menu__header">
-        <span>Name</span>
-        <span>Size</span>
+        <span className="bold">Name</span>
+        <span className="bold">Size</span>
       </header>
       <div className="side-menu__body">
         {folders.map((folder, i) => (
@@ -46,7 +46,7 @@ const FolderSideMenu = ({ folders, setFolders }: FolderSideMenuProps) => {
             <div className="divider">
               {generateChevron(folder.collapse!, () => toggleFolder(i))}
               <FontAwesomeIcon icon={faFolder} />
-              <span>{folder.name}</span>
+              <span className="bold">{folder.name}</span>
             </div>
             {folder.collapse! ? (
               folder.subFolder.map((subFolder, index) => (
@@ -54,7 +54,7 @@ const FolderSideMenu = ({ folders, setFolders }: FolderSideMenuProps) => {
                   <div className="divider">
                     {generateChevron(subFolder.collapse!, () => toggleSubFolder(i, index))}
                     <FontAwesomeIcon icon={faFolder} />
-                    <span>{subFolder.name}</span>
+                    <span className="bold">{subFolder.name}</span>
                   </div>
                   {subFolder.collapse! ? (
                     subFolder.children.map((_) => <DraggableItem key={_.cid} data={_}></DraggableItem>)

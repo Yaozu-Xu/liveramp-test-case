@@ -1,14 +1,18 @@
+@import '../../../variables.scss';
+
 $level-gep: 30px;
 
 .side-menu {
   width: 400px;
-  height: 40%;
+  height: 100%;
   font-size: 13px;
+  padding-right: 20px;
+  border-right: 1px solid $border-light;
 
   &__header {
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid $border-normal;
     display: flex;
-    padding: .3rem 1rem;
+    padding: 0.3rem 1rem;
 
     span:last-child {
       margin-left: auto;
@@ -18,7 +22,7 @@ $level-gep: 30px;
 
   &__body {
     .divider {
-      border-bottom: 1px solid #b8b3b3;
+      border-bottom: 1px solid $border-normal;
     }
 
     .side-menu__folder {
@@ -28,7 +32,7 @@ $level-gep: 30px;
         padding: 5px 0;
 
         * {
-            padding-left: 5px;
+          padding-left: 5px;
         }
       }
     }
@@ -42,9 +46,8 @@ $level-gep: 30px;
       }
 
       * {
-          padding-left: 10px;
+        padding-left: 10px;
       }
-      
     }
   }
 }
