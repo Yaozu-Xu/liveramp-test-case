@@ -8,16 +8,16 @@ import GroupItem from '../group-item/group-item'
 
 type GroupProps = {
   subFolderChild: SubFolderChild
+  removeGroup: any
 }
 
-const Group = ({ subFolderChild }: GroupProps) => {
-  const [groupData, setgroupData] = useState([subFolderChild])
+const Group = ({ subFolderChild, removeGroup }: GroupProps) => {
+  const [groupData, setgroupData] = useState<SubFolderChild[]>([subFolderChild])
   const [categories, setCategories] = useState<Category[]>([])
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchCategories(groupData).then((res) => res)
-      console.log(data)
       setCategories(data)
     }
     fetchData()
@@ -29,13 +29,26 @@ const Group = ({ subFolderChild }: GroupProps) => {
       isOver: monitor.isOver(),
     }),
     drop: (data: SubFolderChild) => {
-      setgroupData([...groupData, data])
+      setgroupData((arr) => [...arr, data])
     },
   }))
+
+  const removeCategory = (category: Category) => {
+    const updatedCategories = categories.filter((_) => _.displayName !== category.displayName)
+    setCategories((arr) => [...arr.filter((_) => _.displayName !== category.displayName)])
+    if (updatedCategories.length === 0) {
+      removeGroup(subFolderChild)
+    }
+  }
+
   return (
     <div ref={drop} className="group-container">
       {categories.map((category) => (
-        <GroupItem groupItemDetails={category} key={`group-item-${category.name}`}></GroupItem>
+        <GroupItem
+          groupItemDetails={category}
+          key={`group-item-${category.displayName}`}
+          removeGroupItem={removeCategory}
+        ></GroupItem>
       ))}
     </div>
   )

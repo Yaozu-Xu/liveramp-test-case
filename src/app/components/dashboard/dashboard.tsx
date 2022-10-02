@@ -13,14 +13,17 @@ const Dashboard = () => {
       isOver: monitor.isOver(),
     }),
     drop: (data: SubFolderChild) => {
-      droppedData.push(data)
-      setDroppedData([...droppedData])
+      setDroppedData((arr) => [...arr, data])
     },
   }))
+
+  const removeDroppedData = (item: SubFolderChild) => {
+    setDroppedData((arr) => [...droppedData.filter((_) => _.cid !== item.cid)])
+  }
   return (
     <div className="dashboard" ref={drop}>
       {droppedData.map((_, index) => (
-        <Group subFolderChild={_} key={`group-${index}-${_.cid}`}></Group>
+        <Group subFolderChild={_} key={`group-${index}-${_.cid}`} removeGroup={removeDroppedData}></Group>
       ))}
     </div>
   )

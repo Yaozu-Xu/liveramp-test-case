@@ -3,7 +3,8 @@ import { Category } from '../model/category';
 export const categoryMockData: {[_: string]: Category}  = {
     'education': {
         parenFolder: 'DeviceReach-ppid',
-        name: 'Education',
+        displayName: 'Education',
+        cid: 'eduation',
         grandParentFolder: 'My Data',
         items: [
             {
@@ -33,7 +34,8 @@ export const categoryMockData: {[_: string]: Category}  = {
         ]
     },
     'gender': {
-        name: 'Gender',
+        displayName: 'Gender',
+        cid: 'gender',
         parenFolder: 'DeviceReach-ppid',
         grandParentFolder: 'My Data',
         items: [
@@ -50,7 +52,8 @@ export const categoryMockData: {[_: string]: Category}  = {
     'age': {
         parenFolder: 'DeviceReach-ppid',
         grandParentFolder: 'My Data',
-        name: 'Age',
+        displayName: 'Age',
+        cid: 'age',
         items: [
             {
                 type: '0-20',

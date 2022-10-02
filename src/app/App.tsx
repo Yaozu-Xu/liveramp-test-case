@@ -18,8 +18,6 @@ function App() {
     fetchData()
   }, [])
 
-  const dragEnd = (e: any) => {}
-
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="main-container">

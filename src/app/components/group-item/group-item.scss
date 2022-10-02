@@ -1,6 +1,7 @@
 .group-item {
   margin: 10px;
   border: 1px solid lightgray;
+  font-size: 14px;
 
   &__header {
     padding: 5px 10px;
@@ -8,9 +9,55 @@
     align-items: center;
     border-bottom: 1px solid lightgray;
 
-    span {
-      margin-left: 20px;
+    &__type{
+        margin-left: 20px;
+    }
+
+    &__selected {
       margin-right: auto;
+      font-weight: bold;
+    }
+  }
+
+  &__body {
+    height: 120px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-between;
+
+    &__hint {
+        font-size: 13px;
+
+        span:first-child {
+            color: rgb(54, 193, 54);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        span:last-child {
+            font-weight: bold;
+        }
+    }
+
+    &__checkbox {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 120px);
+
+      .checkbox__container {
+          display: flex;
+          align-items: center;
+          margin-right: 5px;
+        .checkbox__type {
+          font-size: 12px;
+          color: gray;
+        }
+        .checkbox__count {
+            margin-left: auto;
+            font-size: 13px;
+        }
+      }
     }
   }
 }

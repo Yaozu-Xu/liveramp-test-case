@@ -1,6 +1,7 @@
 export type Category = {
     parenFolder: string;
-    name: string;
+    displayName: string;
+    cid: string;
     grandParentFolder: string;
     items: CategoryItem[];
 }
