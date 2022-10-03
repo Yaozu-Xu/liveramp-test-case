@@ -19,6 +19,7 @@
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
+    "react-hash-string": "^1.0.0",
     "react-scripts": "5.0.1",
     "react-search-box": "^2.3.0",
     "sass-loader": "^13.0.2",
