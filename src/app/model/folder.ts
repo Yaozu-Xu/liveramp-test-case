@@ -16,3 +16,7 @@ export type SubFolderChild = {
     displayName: string;
     cid: string;
 }
+
+export interface GroupMap {
+    [key: string]: SubFolderChild[];
+ } 

@@ -7,38 +7,38 @@ import { Category } from '../../model/category'
 import GroupItem from '../group-item/group-item'
 
 type GroupProps = {
-  subFolderChild: SubFolderChild
-  removeGroup: any
+  groupPramas: SubFolderChild[]
+  groupMapKey: string
+  pushGoupMap: any
+  removeGoupMap: any
 }
 
-const Group = ({ subFolderChild, removeGroup }: GroupProps) => {
-  const [groupData, setgroupData] = useState<SubFolderChild[]>([subFolderChild])
+const Group = ({ groupPramas, groupMapKey, pushGoupMap, removeGoupMap }: GroupProps) => {
   const [categories, setCategories] = useState<Category[]>([])
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchCategories(groupData).then((res) => res)
+      const data = await fetchCategories(groupPramas).then((res) => res)
       setCategories(data)
     }
     fetchData()
-  }, groupData)
+  }, [groupPramas])
 
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'sub-folder-child',
     collect: (monitor) => ({
       isOver: monitor.isOver(),
     }),
-    drop: (data: SubFolderChild) => {
-      setgroupData((arr) => [...arr, data])
+    drop: (data: SubFolderChild, monitor: any) => {
+      if (!!monitor.didDrop() && !!monitor.getDropResult()) {
+        return
+      }
+      pushGoupMap(groupMapKey, data)
     },
   }))
 
   const removeCategory = (category: Category) => {
-    const updatedCategories = categories.filter((_) => _.displayName !== category.displayName)
-    setCategories((arr) => [...arr.filter((_) => _.displayName !== category.displayName)])
-    if (updatedCategories.length === 0) {
-      removeGroup(subFolderChild)
-    }
+    removeGoupMap(groupMapKey, category)
   }
 
   return (

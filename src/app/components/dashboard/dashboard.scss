@@ -1,10 +1,12 @@
 .dashboard {
-    background-color: lightgreen;
-    height: 100%;
-    flex: 1;
-    max-width: 700px;
-    margin: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: lightgreen;
+  height: 100%;
+  flex: 1;
+  max-width: 700px;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+  overflow-y: scroll;
 }
