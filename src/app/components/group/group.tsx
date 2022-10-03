@@ -5,6 +5,7 @@ import { SubFolderChild } from '../../model/folder'
 import { fetchCategories } from '../../api/folder'
 import { Category } from '../../model/category'
 import GroupItem from '../group-item/group-item'
+import ConnectButton from '../connect-button/conntect-button'
 
 type GroupProps = {
   groupPramas: SubFolderChild[]
@@ -44,11 +45,14 @@ const Group = ({ groupPramas, groupMapKey, pushGoupMap, removeGoupMap }: GroupPr
   return (
     <div ref={drop} className="group-container">
       {categories.map((category) => (
-        <GroupItem
-          groupItemDetails={category}
-          key={`group-item-${category.displayName}`}
-          removeGroupItem={removeCategory}
-        ></GroupItem>
+        <>
+          <GroupItem
+            groupItemDetails={category}
+            key={`group-item-${category.displayName}`}
+            removeGroupItem={removeCategory}
+          ></GroupItem>
+          <ConnectButton key={`connect-btn-${category.displayName}`}></ConnectButton>
+        </>
       ))}
     </div>
   )

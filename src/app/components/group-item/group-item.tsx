@@ -34,6 +34,17 @@ const GroupItem = ({ groupItemDetails, removeGroupItem }: GroupItemProps) => {
       }),
     ])
   }
+
+  const handleClearAll = () => {
+    setCategoryItem((arr) => [
+      ...arr.map((_) => {
+        return {
+          ..._,
+          selected: false,
+        }
+      }),
+    ])
+  }
   return (
     <div className="group-item">
       <header className="group-item__header">
@@ -60,13 +71,15 @@ const GroupItem = ({ groupItemDetails, removeGroupItem }: GroupItemProps) => {
           <input type="text" />
         </div>
         <div className="group-item__body__hint">
-          <span className="pointer">Clear All</span>
+          <span className="pointer" onClick={handleClearAll}>
+            Clear All
+          </span>
           <span>{getSelectedCount()} selected</span>
         </div>
         <div className="group-item__body__checkbox">
-          {groupItemDetails.items.map((_) => (
+          {categoryItem.map((_) => (
             <div className="checkbox__container" key={_.type}>
-              <input type="checkbox" onChange={() => handleCheckboxChange(_)} />
+              <input type="checkbox" onChange={() => handleCheckboxChange(_)} checked={_.selected} />
               <span className="checkbox__type">{_.type}</span>
               <span className="checkbox__count">{_.count}</span>
             </div>

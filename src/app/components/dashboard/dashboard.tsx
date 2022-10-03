@@ -32,6 +32,10 @@ const Dashboard = () => {
   const pushGoupMap = (key: string, newValue: SubFolderChild) => {
     setGroupMap((pre: GroupMap) => {
       const res = { ...pre }
+      if (res[key].filter((_) => _.cid === newValue.cid).length > 0) {
+        alert(`${newValue.displayName} has existed in group`)
+        return pre
+      }
       const updatedValue = [...res[key], newValue]
       res[key] = updatedValue
       return { ...res }
