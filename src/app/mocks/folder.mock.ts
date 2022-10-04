@@ -23,7 +23,7 @@ export const folderMocksData: Folder[] = [
           },
           {
             displayName: 'AuditComposition',
-            cid: 'Audit Composition',
+            cid: 'auditComposition',
           },
         ],
       },

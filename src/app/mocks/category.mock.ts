@@ -73,4 +73,124 @@ export const categoryMockData: { [_: string]: Category } = {
       },
     ],
   },
+  auditComposition: {
+    parenFolder: 'DeviceReach-ppid',
+    grandParentFolder: 'My Data',
+    displayName: 'AuditComposition',
+    cid: 'auditComposition',
+    items: [
+      {
+        type: 'mock-1',
+        count: 90,
+      },
+      {
+        type: 'mock-2',
+        count: 100,
+      },
+      {
+        type: 'mock-3',
+        count: 329,
+      },
+      {
+        type: 'mock-4',
+        count: 122,
+      },
+    ],
+  },
+  apple: {
+    parenFolder: 'Category',
+    grandParentFolder: 'My Fruits',
+    displayName: 'Apple',
+    cid: 'apple',
+    items: [
+      {
+        type: 'Small',
+        count: 40,
+      },
+      {
+        type: 'Large',
+        count: 60,
+      },
+      {
+        type: 'Good',
+        count: 109,
+      },
+      {
+        type: 'Bad',
+        count: 90,
+      },
+    ],
+  },
+  mango: {
+    parenFolder: 'Category',
+    grandParentFolder: 'My Fruits',
+    displayName: 'Mango',
+    cid: 'mango',
+    items: [
+      {
+        type: 'Small',
+        count: 40,
+      },
+      {
+        type: 'Large',
+        count: 60,
+      },
+      {
+        type: 'Good',
+        count: 109,
+      },
+      {
+        type: 'Bad',
+        count: 90,
+      },
+    ],
+  },
+  banana: {
+    parenFolder: 'Category',
+    grandParentFolder: 'My Fruits',
+    displayName: 'Banana',
+    cid: 'banana',
+    items: [
+      {
+        type: 'Small',
+        count: 40,
+      },
+      {
+        type: 'Large',
+        count: 60,
+      },
+      {
+        type: 'Good',
+        count: 109,
+      },
+      {
+        type: 'Bad',
+        count: 90,
+      },
+    ],
+  },
+  orange: {
+    parenFolder: 'Category',
+    grandParentFolder: 'My Fruits',
+    displayName: 'Orange',
+    cid: 'orange',
+    items: [
+      {
+        type: 'Small',
+        count: 40,
+      },
+      {
+        type: 'Large',
+        count: 60,
+      },
+      {
+        type: 'Good',
+        count: 109,
+      },
+      {
+        type: 'Bad',
+        count: 90,
+      },
+    ],
+  },
 }
